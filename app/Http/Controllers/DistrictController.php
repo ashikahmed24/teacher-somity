@@ -58,8 +58,8 @@ class DistrictController extends Controller
 
     public function upazilas(District $district)
     {
-        $district->load('upazilas');
+        $district->load('upazilas.district');
 
-        return UpazilaResource::make($district->upazilas);
+        return UpazilaResource::collection($district->upazilas);
     }
 }
